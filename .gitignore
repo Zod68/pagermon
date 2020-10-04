@@ -94,3 +94,4 @@ server/sessions
 #coverage
 server/coverage/
 
+/server/config/config.json
