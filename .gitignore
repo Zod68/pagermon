@@ -95,3 +95,4 @@ server/sessions
 server/coverage/
 
 /server/config/config.json
+/server/process.json
