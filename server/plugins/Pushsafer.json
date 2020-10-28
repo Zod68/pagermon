@@ -1,0 +1,64 @@
+{
+    "name": "Pushsafer",
+    "description": "PushSafer plugin",
+    "disable": false,
+    "trigger": "message",
+    "scope": "after",
+    "config": [ 
+        {
+            "name": "pushsaferKey",
+            "label": "PushSafer Private Key",
+            "description": "Private Key for the PushSafer API",
+            "type": "text",
+            "required": true
+        }
+    ],
+    "aliasConfig": [ 
+        {
+            "name": "enable",
+            "label": "Enable",
+            "description": "Enable sending messages that match this alias via PushSafer",
+            "type": "checkbox"
+        },
+        {
+            "name": "priority",
+            "label": "Priority",
+            "description": "Priority of the message",
+            "type": "select",
+            "options": [
+                {"value": "-2", "text": "Lowest Priority"},
+                {"value": "-1", "text": "Low Priority"},
+                {"value": "0", "text": "Normal Priority"},
+                {"value": "1", "text": "High Priority"},
+                {"value": "2", "text": "Emergency Priority"}
+            ],
+            "required": true
+        },
+        {
+            "name": "device",
+            "label": "Device or Device Group ID",
+            "description": "PushSafer destination for messages",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "sound",
+            "label": "Sound",
+            "description": "Sets the notification sound. Leaving this blank will use the default notification sound set in your application",
+            "type": "select",
+            "options": [
+                {"value": "0", "text": "Silent"},
+                {"value": "1", "text": "Ahem"},
+                {"value": "2", "text": "Applause"},
+                {"value": "3", "text": "Arrow"},
+                {"value": "4", "text": "Baby"},
+                {"value": "5", "text": "Bell"},
+                {"value": "6", "text": "Bicycle"},
+                {"value": "7", "text": "Boing"},
+                {"value": "8", "text": "Buzzer"},
+                {"value": "9", "text": "Camera"},
+                {"value": "10", "text": "Car Horn "}
+            ]
+        }
+    ]
+}
