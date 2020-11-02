@@ -21,6 +21,13 @@
             "type": "checkbox"
         },
         {
+            "name": "device",
+            "label": "Device or Device Group ID",
+            "description": "PushSafer destination for messages",
+            "type": "text",
+            "required": true
+        },
+        {
             "name": "priority",
             "label": "Priority",
             "description": "Priority of the message",
@@ -35,11 +42,21 @@
             "required": true
         },
         {
-            "name": "device",
-            "label": "Device or Device Group ID",
-            "description": "PushSafer destination for messages",
-            "type": "text",
-            "required": true
+            "name": "ttl",
+            "label": "Time to Live",
+            "description": "Time in minutes after which message automatically gets purged",
+            "type": "text"
+        },
+        {
+            "name": "vibration",
+            "label": "Vibration",
+            "description": "Strengh of vibration",
+            "type": "select",
+            "options": [
+                {"value": "1", "text": "Low"},
+                {"value": "2", "text": "Medium"},
+                {"value": "3", "text": "High"}
+            ]
         },
         {
             "name": "sound",
