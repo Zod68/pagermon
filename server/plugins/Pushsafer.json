@@ -74,7 +74,8 @@
                 {"value": "7", "text": "Boing"},
                 {"value": "8", "text": "Buzzer"},
                 {"value": "9", "text": "Camera"},
-                {"value": "10", "text": "Car Horn "}
+                {"value": "61", "text": "Pager short"},
+		{"value": "62", "text": "Pager long"}
             ]
         }
     ]

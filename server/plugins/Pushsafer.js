@@ -27,7 +27,7 @@ function run(trigger, scope, data, config, callback) {
 
             var pushTTL = 10; // default
             if (pConf.ttl) {
-              pushTTL = pConf.ttl.value;
+              pushTTL = pConf.ttl;
             }
 
             var pushVibration = ""; // default
@@ -38,24 +38,26 @@ function run(trigger, scope, data, config, callback) {
             var msg = {
                 m: data.message,                            // Message (required)
                 t: data.agency+' - '+data.alias,            // Title (optional)
-                d: pConf.device.value,                      // Device or Device Group id (required)
                 s: pushSound,                               // Sound (value 0-28) (optional)
                 v: pushVibration,                                     // Vibration (empty or value 1-3) (optional)
                 i: '83',                                    // Icon (value 1-98) (optional)
                 l: pushTTL,                                    // Time to Live (optional)
                 pr: pushPri,                                // Priority (optional: -2, -1, 0, 1, 2)
                 re: '60',                                   // Retry (optional: 60-10800 seconds)
-                ex: '120',                                   // Expire (optional: 60-10800 seconds)
-                a: '0',                                     // Answer
-                onerror: function(err) {
-                    logger.main.error('Pushsafer:', err);
-                    }				                        	
+                ex: '120',				// Expire (optional: 60-10800 seconds)
+		a: '0',
+		d: pConf.device
+                //a: '0',                                     // Answer
+		//onerror: function(err) {
+                //    logger.main.error('Pushsafer:', err);
+                //    }				                        	
             };
 
             p.send(msg, function (err, result) {
               if (err) { logger.main.error('Pushsafer:' + err); }
               logger.main.debug('Pushsafer:' + result);
               console.log('RESULT', result );
+		console.log('VARIABLE : ', msg );
               callback();
             });
           }
